@@ -14,14 +14,23 @@ protocol MapInteractorOutput: class {
 }
 
 protocol MapInteractorInput {
+  func requestAuthorization()
+  func startUpdatingLocation()
+  func stopUpdatingLocation()
   
+  func fetchPins()
 }
 
-class MapInteractor {
-  weak var output: MapInteractorOutput!
-  lazy var locationWorker: LocationWorker = {
-    return LocationWorker(output: self.output)
-  }()
+class MapInteractor: MapInteractorInput {
+  weak var output: MapInteractorOutput! {
+    didSet {
+      self.locationWorker = LocationWorker(output: self.output)
+      self.pinsWorker = PinsWorker(pinsStore: PinsMemStore(locationObj: self.locationWorker))
+    }
+  }
+  var locationWorker: LocationWorker!
+  var pinsWorker: PinsWorker!
+  
   
   func requestAuthorization() {
     locationWorker.requestAuthorization()
@@ -35,7 +44,7 @@ class MapInteractor {
     locationWorker.stopUpdatingLocation()
   }
   
-  func fetchPins(request: Map.Request) {
+  func fetchPins() {
     
   }
 }

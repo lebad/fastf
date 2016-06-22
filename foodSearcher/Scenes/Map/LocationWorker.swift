@@ -14,6 +14,7 @@ class LocationWorker: NSObject, CLLocationManagerDelegate {
   var locationManager = CLLocationManager()
   var output: MapInteractorOutput
   
+  private var currentLocation: Map.Response.UserLocation?
   
   init(output: MapInteractorOutput) {
     self.output = output
@@ -43,8 +44,15 @@ class LocationWorker: NSObject, CLLocationManagerDelegate {
   
   func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     if let location = locations.first {
-      output.didUpdateLocation(Map.Response.UserLocation(latitude: location.coordinate.latitude,
-                                                         longitude: location.coordinate.longitude))
+      currentLocation = Map.Response.UserLocation(latitude: location.coordinate.latitude,
+                                                  longitude: location.coordinate.longitude)
+      output.didUpdateLocation(currentLocation!)
     }
+  }
+}
+
+extension LocationWorker: LocationProtocol {
+  func getCurrentLocation() -> Map.Response.UserLocation? {
+    return currentLocation
   }
 }

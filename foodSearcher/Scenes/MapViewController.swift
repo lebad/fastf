@@ -14,7 +14,7 @@ protocol MapViewControllerOutput {
   func startUpdatingLocation()
   func stopUpdatingLocation()
   
-  func fetchPins(request: Map.Request)
+  func fetchPins()
 }
 
 protocol MapViewControllerInput {

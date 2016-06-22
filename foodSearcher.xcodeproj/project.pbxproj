@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		550C6F461D1745BB004C101C /* PinsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C6F451D1745BB004C101C /* PinsWorker.swift */; };
+		550C6F491D174875004C101C /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C6F481D174875004C101C /* Pin.swift */; };
+		550C6F4B1D174A3C004C101C /* PinsMemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C6F4A1D174A3C004C101C /* PinsMemStore.swift */; };
 		552C5E1A1D16EE8B0015D79D /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C5E191D16EE8B0015D79D /* MapRouter.swift */; };
 		552C5E1C1D16F27F0015D79D /* LocationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C5E1B1D16F27F0015D79D /* LocationWorker.swift */; };
 		5552956E1D11F666003C0C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552956D1D11F666003C0C0F /* AppDelegate.swift */; };
@@ -14,7 +17,6 @@
 		555295751D11F666003C0C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555295741D11F666003C0C0F /* Assets.xcassets */; };
 		555295781D11F666003C0C0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555295761D11F666003C0C0F /* LaunchScreen.storyboard */; };
 		555295831D11F666003C0C0F /* foodSearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555295821D11F666003C0C0F /* foodSearcherTests.swift */; };
-		555295901D12096D003C0C0F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552958F1D12096D003C0C0F /* LocationManager.swift */; };
 		55E5834B1D16D4E700CDF685 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5834A1D16D4E700CDF685 /* MapViewController.swift */; };
 		55E5834D1D16D52C00CDF685 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5834C1D16D52C00CDF685 /* MapInteractor.swift */; };
 		55E5834F1D16D54F00CDF685 /* MapConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5834E1D16D54F00CDF685 /* MapConfigurator.swift */; };
@@ -35,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		2B69A540DC15559A31EFF6D5 /* Pods_foodSearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodSearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		550C6F451D1745BB004C101C /* PinsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinsWorker.swift; path = ../PinsWorker.swift; sourceTree = "<group>"; };
+		550C6F481D174875004C101C /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		550C6F4A1D174A3C004C101C /* PinsMemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinsMemStore.swift; sourceTree = "<group>"; };
 		552C5E191D16EE8B0015D79D /* MapRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
 		552C5E1B1D16F27F0015D79D /* LocationWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationWorker.swift; sourceTree = "<group>"; };
 		5552956A1D11F666003C0C0F /* foodSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,7 +51,6 @@
 		5552957E1D11F666003C0C0F /* foodSearcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodSearcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		555295821D11F666003C0C0F /* foodSearcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foodSearcherTests.swift; sourceTree = "<group>"; };
 		555295841D11F666003C0C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5552958F1D12096D003C0C0F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		55E5834A1D16D4E700CDF685 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = foodSearcher/Scenes/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		55E5834C1D16D52C00CDF685 /* MapInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		55E5834E1D16D54F00CDF685 /* MapConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapConfigurator.swift; sourceTree = "<group>"; };
@@ -89,6 +93,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		550C6F471D174854004C101C /* FetchPins */ = {
+			isa = PBXGroup;
+			children = (
+				550C6F451D1745BB004C101C /* PinsWorker.swift */,
+				550C6F4A1D174A3C004C101C /* PinsMemStore.swift */,
+				550C6F481D174875004C101C /* Pin.swift */,
+			);
+			path = FetchPins;
+			sourceTree = "<group>";
+		};
 		555295611D11F666003C0C0F = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +128,6 @@
 			children = (
 				55E583481D16D49600CDF685 /* Scenes */,
 				5552956D1D11F666003C0C0F /* AppDelegate.swift */,
-				5552958F1D12096D003C0C0F /* LocationManager.swift */,
 				555295711D11F666003C0C0F /* Main.storyboard */,
 				555295741D11F666003C0C0F /* Assets.xcassets */,
 				555295761D11F666003C0C0F /* LaunchScreen.storyboard */,
@@ -145,10 +158,11 @@
 			children = (
 				55E5834E1D16D54F00CDF685 /* MapConfigurator.swift */,
 				55E5834A1D16D4E700CDF685 /* MapViewController.swift */,
-				55E5834C1D16D52C00CDF685 /* MapInteractor.swift */,
 				55E583501D16D61100CDF685 /* MapModels.swift */,
 				552C5E191D16EE8B0015D79D /* MapRouter.swift */,
+				55E5834C1D16D52C00CDF685 /* MapInteractor.swift */,
 				552C5E1B1D16F27F0015D79D /* LocationWorker.swift */,
+				550C6F471D174854004C101C /* FetchPins */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -369,11 +383,13 @@
 				55E5834F1D16D54F00CDF685 /* MapConfigurator.swift in Sources */,
 				5552956E1D11F666003C0C0F /* AppDelegate.swift in Sources */,
 				552C5E1C1D16F27F0015D79D /* LocationWorker.swift in Sources */,
+				550C6F491D174875004C101C /* Pin.swift in Sources */,
 				55E583511D16D61100CDF685 /* MapModels.swift in Sources */,
 				55E5834B1D16D4E700CDF685 /* MapViewController.swift in Sources */,
 				552C5E1A1D16EE8B0015D79D /* MapRouter.swift in Sources */,
-				555295901D12096D003C0C0F /* LocationManager.swift in Sources */,
+				550C6F4B1D174A3C004C101C /* PinsMemStore.swift in Sources */,
 				55E5834D1D16D52C00CDF685 /* MapInteractor.swift in Sources */,
+				550C6F461D1745BB004C101C /* PinsWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
