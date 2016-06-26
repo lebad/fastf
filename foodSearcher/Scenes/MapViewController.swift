@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import MapKit
 
 protocol MapViewControllerOutput {
   func requestAuthorization()
@@ -37,6 +38,8 @@ class MapViewController: UIViewController, MapViewControllerInput {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    mapView.delegate = self
+    
     output.requestAuthorization()
     output.startUpdatingLocation()
   }
@@ -50,9 +53,17 @@ class MapViewController: UIViewController, MapViewControllerInput {
     let coordinate = CLLocationCoordinate2D(latitude: response.latitude, longitude: response.longitude)
     mapView.camera = GMSCameraPosition(target: coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
     output.stopUpdatingLocation()
+    
+    output.fetchPins()
   }
   
-  
+  func showPins(response: Map.Response) {
+    for pin in response.pins {
+      let position = CLLocationCoordinate2D(latitude: pin.latitude!, longitude: pin.longitude!)
+      let marker = GMSMarker(position: position)
+      marker.map = mapView
+    }
+  }
   
   
   

@@ -14,6 +14,8 @@ struct Map {
   }
   
   struct Response {
+    var pins: [Pin]
+    
     struct UserLocation {
       var latitude: Double
       var longitude: Double
