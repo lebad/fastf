@@ -11,4 +11,8 @@ import UIKit
 class MapRouter {
   weak var viewController: MapViewController!
   
+  func navigateToDescription() {
+    let descriptionController = ObjectDescriptionController(mainView: viewController.view)
+    descriptionController.presentController()
+  }
 }

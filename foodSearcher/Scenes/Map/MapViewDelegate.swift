@@ -13,6 +13,7 @@ import MapKit
 extension MapViewController: GMSMapViewDelegate {
   
   func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+    router.navigateToDescription()
     return false
   }
 }
