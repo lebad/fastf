@@ -13,20 +13,23 @@ protocol FromViewController: class {
 }
 
 protocol ToViewController: class {
-  
+  func setInitialSettingsWith(delegate: UIViewControllerTransitioningDelegate)
 }
 
 class FromMapToDescriptionAnimator: UIPercentDrivenInteractiveTransition {
   
-  weak var fromViewController: FromViewController?
-  weak var toViewController: ToViewController?
+  weak var fromViewController: FromViewController!
+  weak var toViewController: ToViewController! {
+    didSet {
+      self.toViewController.setInitialSettingsWith(self)
+    }
+  }
   
   init(fromVC: FromViewController, toVC: ToViewController) {
     super.init()
     self.fromViewController = fromVC
     self.toViewController = toVC
   }
-
   
 }
 
@@ -35,23 +38,19 @@ extension FromMapToDescriptionAnimator: UIViewControllerTransitioningDelegate {
   
   func animationControllerForPresentedController(presented: UIViewController,
                                                  presentingController presenting: UIViewController,
-                                                                      sourceController source: UIViewController)
-    -> UIViewControllerAnimatedTransitioning? {
+                                                 sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     return self
   }
   
-  func animationControllerForDismissedController(dismissed: UIViewController)
-    -> UIViewControllerAnimatedTransitioning? {
+  func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     return self
   }
   
-  func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning)
-    -> UIViewControllerInteractiveTransitioning? {
+  func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
     return self
   }
   
-  func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning)
-    -> UIViewControllerInteractiveTransitioning? {
+  func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
     return self
   }
 }

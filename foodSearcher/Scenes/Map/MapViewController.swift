@@ -76,3 +76,7 @@ class MapViewController: UIViewController, MapViewControllerInput {
   }
 
 }
+
+extension MapViewController: FromViewController {
+  
+}
