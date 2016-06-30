@@ -22,40 +22,71 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGs-k6-Lgf">
-                                <rect key="frame" x="0.0" y="193" width="375" height="474"/>
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stardogs" translatesAutoresizingMaskIntoConstraints="NO" id="tTa-U3-olP">
-                                        <rect key="frame" x="8" y="202" width="130" height="70"/>
+                                        <rect key="frame" x="8" y="15" width="130" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="7bX-H4-tka"/>
                                             <constraint firstAttribute="width" constant="130" id="Lci-Qc-pq0"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="990" verticalCompressionResistancePriority="990" placeholderIntrinsicWidth="221" placeholderIntrinsicHeight="150" text="Stardog's" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0K-k2-i5u">
-                                        <rect key="frame" x="146" y="8" width="221" height="150"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="990" verticalCompressionResistancePriority="990" text="Stardog's" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0K-k2-i5u">
+                                        <rect key="frame" x="146" y="8" width="221" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="990" verticalCompressionResistancePriority="990" placeholderIntrinsicWidth="221" placeholderIntrinsicHeight="300" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuM-J6-aG9">
-                                        <rect key="frame" x="146" y="166" width="221" height="300"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="990" verticalCompressionResistancePriority="990" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuM-J6-aG9">
+                                        <rect key="frame" x="146" y="36" width="221" height="16.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFb-Mm-IT1">
+                                        <rect key="frame" x="278" y="62" width="48" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="On Car"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DQ-9K-XQ5">
+                                        <rect key="frame" x="334" y="62" width="33" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Walk"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1300 м" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LL9-hb-pN7">
+                                        <rect key="frame" x="174" y="71.5" width="38.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="distanceArrow" translatesAutoresizingMaskIntoConstraints="NO" id="4Qi-OM-yvt">
+                                        <rect key="frame" x="146" y="67" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="9RU-vr-pIK"/>
+                                            <constraint firstAttribute="height" constant="20" id="ALX-gO-iYd"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="tTa-U3-olP" firstAttribute="centerY" secondItem="NGs-k6-Lgf" secondAttribute="centerY" id="2h2-W2-ura"/>
                                     <constraint firstItem="SuM-J6-aG9" firstAttribute="top" secondItem="c0K-k2-i5u" secondAttribute="bottom" constant="8" id="4Kd-c9-mFh"/>
-                                    <constraint firstAttribute="bottom" secondItem="SuM-J6-aG9" secondAttribute="bottom" priority="900" constant="8" id="EsM-3f-7EY"/>
                                     <constraint firstItem="c0K-k2-i5u" firstAttribute="top" secondItem="NGs-k6-Lgf" secondAttribute="top" constant="8" id="Jah-pf-1et"/>
                                     <constraint firstItem="tTa-U3-olP" firstAttribute="leading" secondItem="NGs-k6-Lgf" secondAttribute="leading" constant="8" id="Jq5-Fg-akE"/>
+                                    <constraint firstItem="4Qi-OM-yvt" firstAttribute="centerY" secondItem="nFb-Mm-IT1" secondAttribute="centerY" id="Q9n-Pl-teY"/>
+                                    <constraint firstItem="nFb-Mm-IT1" firstAttribute="top" secondItem="SuM-J6-aG9" secondAttribute="bottom" priority="990" constant="10" id="Ruz-TE-cic"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="990" constant="100" id="UIZ-Wy-dwG"/>
                                     <constraint firstItem="SuM-J6-aG9" firstAttribute="leading" secondItem="tTa-U3-olP" secondAttribute="trailing" constant="8" id="URj-Dn-4MZ"/>
+                                    <constraint firstItem="6DQ-9K-XQ5" firstAttribute="leading" secondItem="nFb-Mm-IT1" secondAttribute="trailing" constant="8" id="YC4-0q-cMG"/>
                                     <constraint firstAttribute="trailing" secondItem="SuM-J6-aG9" secondAttribute="trailing" constant="8" id="djq-eh-HpG"/>
                                     <constraint firstAttribute="trailing" secondItem="c0K-k2-i5u" secondAttribute="trailing" constant="8" id="gum-SC-ukI"/>
                                     <constraint firstItem="c0K-k2-i5u" firstAttribute="leading" secondItem="tTa-U3-olP" secondAttribute="trailing" constant="8" id="hyP-Di-znt"/>
+                                    <constraint firstItem="LL9-hb-pN7" firstAttribute="leading" secondItem="4Qi-OM-yvt" secondAttribute="trailing" constant="8" id="mF8-FP-i6F"/>
+                                    <constraint firstAttribute="bottom" secondItem="nFb-Mm-IT1" secondAttribute="bottom" constant="8" id="nX9-c8-604"/>
+                                    <constraint firstItem="4Qi-OM-yvt" firstAttribute="leading" secondItem="SuM-J6-aG9" secondAttribute="leading" id="sdL-kA-tP6"/>
+                                    <constraint firstItem="LL9-hb-pN7" firstAttribute="baseline" secondItem="nFb-Mm-IT1" secondAttribute="baseline" id="ue1-Q0-scT"/>
+                                    <constraint firstAttribute="trailing" secondItem="6DQ-9K-XQ5" secondAttribute="trailing" constant="8" id="wKJ-gE-ifl"/>
+                                    <constraint firstItem="6DQ-9K-XQ5" firstAttribute="baseline" secondItem="nFb-Mm-IT1" secondAttribute="baseline" id="zzj-4D-a9M"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -100,6 +131,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="distanceArrow" width="512" height="512"/>
         <image name="stardogs" width="445" height="233"/>
     </resources>
 </document>
