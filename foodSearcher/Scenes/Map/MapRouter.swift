@@ -17,6 +17,7 @@ class MapRouter {
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     let descriptionVC = storyBoard.instantiateViewControllerWithIdentifier("DescriptionViewController") as! DescriptionViewController
     self.animator = FromMapToDescriptionAnimator(fromVC: self.viewController, toVC: descriptionVC)
+    self.animator?.animate()
     viewController.presentViewController(descriptionVC, animated: true, completion: nil)
   }
 }

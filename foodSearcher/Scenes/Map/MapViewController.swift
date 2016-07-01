@@ -29,6 +29,9 @@ class MapViewController: UIViewController, MapViewControllerInput {
   var router: MapRouter!
   
   @IBOutlet weak var mapView: GMSMapView!
+  @IBOutlet weak var bottomInformationView: MapBottomInformationView!
+  @IBOutlet weak var containerView: UIView!
+  @IBOutlet weak var tabBar: UITabBar!
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -65,8 +68,6 @@ class MapViewController: UIViewController, MapViewControllerInput {
     }
   }
   
-  
-  
   func displayCurrentLocation(responce: Map.Response) {
     
   }
@@ -78,5 +79,24 @@ class MapViewController: UIViewController, MapViewControllerInput {
 }
 
 extension MapViewController: FromViewController {
+
+  func getTargetView() -> UIView {
+    return self.bottomInformationView
+  }
   
+  func pushViewController(viewController: UIViewController) {
+    self.navigationController?.pushViewController(viewController, animated: true)
+  }
+  
+  func presentViewController(viewController: UIViewController) {
+    self.presentViewController(viewController, animated: true, completion: nil)
+  }
+  
+  func beginAppearanceTransition() {
+    self.beginAppearanceTransition(false, animated: false)
+  }
+
+  func endAppearanceTransitionFromVC() {
+    self.endAppearanceTransition()
+  }
 }

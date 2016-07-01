@@ -18,4 +18,12 @@ extension DescriptionViewController: ToViewController {
     self.transitioningDelegate = delegate
     self.modalPresentationStyle = .OverFullScreen
   }
+  
+  func popViewController() {
+    self.navigationController?.popViewControllerAnimated(true)
+  }
+  
+  func dismissViewController() {
+    self.dismissViewControllerAnimated(true, completion: nil)
+  }
 }
