@@ -31,7 +31,7 @@ class MapViewController: UIViewController, MapViewControllerInput {
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var bottomInformationView: MapBottomInformationView!
   @IBOutlet weak var containerView: UIView!
-  @IBOutlet weak var tabBar: UITabBar!
+  var tabBar: UITabBar! = UITabBar(frame: CGRectZero)
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -45,6 +45,8 @@ class MapViewController: UIViewController, MapViewControllerInput {
     
     output.requestAuthorization()
     output.startUpdatingLocation()
+    
+    router.instantiateAnimator()
   }
   
   func didSuccessAuthorization() {
@@ -74,6 +76,12 @@ class MapViewController: UIViewController, MapViewControllerInput {
   
   func displayPins(response: Map.Response) {
     
+  }
+  
+  // MARK: - Actions
+  
+  @IBAction func informationButtonAction(sender: UIButton) {
+    self.router.navigateToDescription()
   }
 
 }

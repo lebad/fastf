@@ -20,6 +20,9 @@
 		555295831D11F666003C0C0F /* foodSearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555295821D11F666003C0C0F /* foodSearcherTests.swift */; };
 		558A6A4B1D241A7300E32200 /* Map.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558A6A4A1D241A7300E32200 /* Map.xcassets */; };
 		558A6A4E1D25B85000E32200 /* MapBottomInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A6A4D1D25B85000E32200 /* MapBottomInformationView.swift */; };
+		558A6A501D2851BB00E32200 /* DescriptionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A6A4F1D2851BB00E32200 /* DescriptionRouter.swift */; };
+		558A6A521D28530E00E32200 /* DescriptionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A6A511D28530E00E32200 /* DescriptionInteractor.swift */; };
+		558A6A541D28547900E32200 /* DescriptionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A6A531D28547900E32200 /* DescriptionConfigurator.swift */; };
 		55C983F71D23F60D00D0FE7E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C983F61D23F60D00D0FE7E /* MapViewController.swift */; };
 		55C983F91D23F61700D0FE7E /* FromMapToDescriptionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C983F81D23F61700D0FE7E /* FromMapToDescriptionAnimator.swift */; };
 		55C983FD1D23F6C500D0FE7E /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C983FC1D23F6C500D0FE7E /* DescriptionViewController.swift */; };
@@ -59,6 +62,9 @@
 		555295841D11F666003C0C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		558A6A4A1D241A7300E32200 /* Map.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Map.xcassets; sourceTree = "<group>"; };
 		558A6A4D1D25B85000E32200 /* MapBottomInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapBottomInformationView.swift; sourceTree = "<group>"; };
+		558A6A4F1D2851BB00E32200 /* DescriptionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionRouter.swift; sourceTree = "<group>"; };
+		558A6A511D28530E00E32200 /* DescriptionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionInteractor.swift; sourceTree = "<group>"; };
+		558A6A531D28547900E32200 /* DescriptionConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionConfigurator.swift; sourceTree = "<group>"; };
 		55C983F61D23F60D00D0FE7E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		55C983F81D23F61700D0FE7E /* FromMapToDescriptionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromMapToDescriptionAnimator.swift; sourceTree = "<group>"; };
 		55C983FC1D23F6C500D0FE7E /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				55C983FC1D23F6C500D0FE7E /* DescriptionViewController.swift */,
+				558A6A4F1D2851BB00E32200 /* DescriptionRouter.swift */,
+				558A6A511D28530E00E32200 /* DescriptionInteractor.swift */,
+				558A6A531D28547900E32200 /* DescriptionConfigurator.swift */,
 			);
 			path = Description;
 			sourceTree = "<group>";
@@ -420,8 +429,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				558A6A501D2851BB00E32200 /* DescriptionRouter.swift in Sources */,
 				55C983F71D23F60D00D0FE7E /* MapViewController.swift in Sources */,
 				558A6A4E1D25B85000E32200 /* MapBottomInformationView.swift in Sources */,
+				558A6A521D28530E00E32200 /* DescriptionInteractor.swift in Sources */,
+				558A6A541D28547900E32200 /* DescriptionConfigurator.swift in Sources */,
 				55C983F91D23F61700D0FE7E /* FromMapToDescriptionAnimator.swift in Sources */,
 				55C983FD1D23F6C500D0FE7E /* DescriptionViewController.swift in Sources */,
 				55E5834F1D16D54F00CDF685 /* MapConfigurator.swift in Sources */,

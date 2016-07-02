@@ -17,5 +17,6 @@ class MapBottomInformationView: UIView {
   @IBOutlet weak var distanceImageView: UIImageView!
   @IBOutlet weak var driveButton: UIButton!
   @IBOutlet weak var walkButton: UIButton!
+  @IBOutlet weak var mainButton: UIButton!
 }
 

@@ -8,16 +8,29 @@
 
 import UIKit
 
+protocol FromMapToDescriptionAnimatable {
+  func setDefaultType()
+}
+
 class MapRouter {
   weak var viewController: MapViewController!
   
   private var animator: FromMapToDescriptionAnimator?
-  
-  func navigateToDescription() {
+  private var descriptionVC: DescriptionViewController = {
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     let descriptionVC = storyBoard.instantiateViewControllerWithIdentifier("DescriptionViewController") as! DescriptionViewController
-    self.animator = FromMapToDescriptionAnimator(fromVC: self.viewController, toVC: descriptionVC)
+    return descriptionVC
+  }()
+  
+  func instantiateAnimator() {
+    self.animator = FromMapToDescriptionAnimator(fromVC: self.viewController, toVC: self.descriptionVC)
+    self.descriptionVC.setInitialSettingsWith(self.animator!)
+    self.descriptionVC.router.animator = self.animator
     self.animator?.animate()
+  }
+  
+  func navigateToDescription() {
+    self.animator?.interactiveType = .None
     viewController.presentViewController(descriptionVC, animated: true, completion: nil)
   }
 }

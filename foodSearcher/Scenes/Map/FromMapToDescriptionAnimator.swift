@@ -109,12 +109,89 @@ class FromMapToDescriptionAnimator: UIPercentDrivenInteractiveTransition {
     self.fromVC = fromVC
     self.toVC = toVC
     
-    self.gestureTargetView = self.fromVC.getTargetView()
-    self.interactiveType = .Present
+    self.isPresenting = true
+    
     super.init()
   }
   
   func animate() {
+    
+    self.usingSpringWithDamping = 0.8
+    self.gestureTargetView = self.fromVC.getTargetView()
+    self.interactiveType = .Present
+    
+    // Present
+    
+    self.presentationBeforeHandler = { [unowned self] containerView, transitionContext in
+      print("start presentation")
+      self.fromVC.beginAppearanceTransition()
+      
+      self.direction = .Top
+      
+      self.toVC.view.frame.origin.y = self.fromVC.getTargetView().frame.origin.y + self.fromVC.getTargetView().frame.size.height
+      self.fromVC.view.insertSubview(self.toVC.view, belowSubview: self.fromVC.tabBar)
+      
+      self.fromVC.view.layoutIfNeeded()
+      self.toVC.view.layoutIfNeeded()
+      
+      // miniPlayerView
+      let startOriginY = self.fromVC.getTargetView().frame.origin.y
+      let endOriginY = -self.fromVC.getTargetView().frame.size.height
+      let diff = -endOriginY + startOriginY
+      // tabBar
+      let tabStartOriginY = self.fromVC.tabBar.frame.origin.y
+      let tabEndOriginY = self.fromVC.containerView.frame.size.height
+      let tabDiff = tabEndOriginY - tabStartOriginY
+      
+      self.presentationCancelAnimationHandler = { containerView in
+        self.fromVC.getTargetView().frame.origin.y = startOriginY
+        self.toVC.view.frame.origin.y = self.fromVC.getTargetView().frame.origin.y + self.fromVC.getTargetView().frame.size.height
+        self.fromVC.tabBar.frame.origin.y = tabStartOriginY
+        self.fromVC.containerView.alpha = 1.0
+        self.fromVC.tabBar.alpha = 1.0
+        self.fromVC.getTargetView().alpha = 1.0
+        for subview in self.fromVC.getTargetView().subviews {
+          subview.alpha = 1.0
+        }
+      }
+      
+      self.presentationAnimationHandler = { [unowned self] containerView, percentComplete in
+        let _percentComplete = percentComplete >= 0 ? percentComplete : 0
+        self.fromVC.getTargetView().frame.origin.y = startOriginY - (diff * _percentComplete)
+        if self.fromVC.getTargetView().frame.origin.y < endOriginY {
+          self.fromVC.getTargetView().frame.origin.y = endOriginY
+        }
+        self.toVC.view.frame.origin.y = self.fromVC.getTargetView().frame.origin.y + self.fromVC.getTargetView().frame.size.height
+        self.fromVC.tabBar.frame.origin.y = tabStartOriginY + (tabDiff * _percentComplete)
+        if self.fromVC.tabBar.frame.origin.y > tabEndOriginY {
+          self.fromVC.tabBar.frame.origin.y = tabEndOriginY
+        }
+        
+        let alpha = 1.0 - (1.0 * _percentComplete)
+        self.fromVC.containerView.alpha = alpha + 0.5
+        self.fromVC.tabBar.alpha = alpha
+        for subview in self.fromVC.getTargetView().subviews {
+          subview.alpha = alpha
+        }
+      }
+      
+      self.presentationCompletionHandler = { containerView, completeTransition in
+        self.fromVC.endAppearanceTransitionFromVC()
+        
+        if completeTransition {
+          self.fromVC.getTargetView().alpha = 0.0
+          self.toVC.view.removeFromSuperview()
+          containerView.addSubview(self.toVC.view)
+          self.interactiveType = .Dismiss
+          self.gestureTargetView = self.toVC.view
+          self.direction = .Bottom
+        } else {
+          self.fromVC.beginAppearanceTransition()
+          self.fromVC.endAppearanceTransitionFromVC()
+        }
+      }
+    }
+    
     // Dismiss
     
     self.dismissalBeforeHandler = { [unowned self] containerView, transitionContext in
@@ -170,7 +247,7 @@ class FromMapToDescriptionAnimator: UIPercentDrivenInteractiveTransition {
         
         if completeTransition {
           self.toVC.view.removeFromSuperview()
-//          self.animator.gestureTargetView = self.miniPlayerView
+          self.gestureTargetView = self.fromVC.getTargetView()
           self.interactiveType = .Present
         } else {
           self.toVC.view.removeFromSuperview()
@@ -189,7 +266,7 @@ class FromMapToDescriptionAnimator: UIPercentDrivenInteractiveTransition {
   private func registerPanGesture() {
     self.unregisterPanGesture()
     
-    self.gesture = UIPanGestureRecognizer(target: self, action: #selector(self.handlePan(_:)))
+    self.gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
     self.gesture!.delegate = self
     self.gesture!.maximumNumberOfTouches = 1
     
@@ -541,6 +618,15 @@ extension FromMapToDescriptionAnimator: UIGestureRecognizerDelegate {
   func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer
     otherGestureRecognizer: UIGestureRecognizer) -> Bool {
     return false
+  }
+}
+
+// MARK: - FromMapToDescriptionAnimatable
+
+extension FromMapToDescriptionAnimator: FromMapToDescriptionAnimatable {
+  
+  func setDefaultType() {
+    self.interactiveType = .None
   }
 }
 

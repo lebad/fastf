@@ -8,8 +8,28 @@
 
 import UIKit
 
-class DescriptionViewController: UIViewController {
+protocol DescriptionControllerOutput {
   
+}
+
+protocol DescriptionControllerInput {
+  
+}
+
+class DescriptionViewController: UIViewController, DescriptionControllerInput {
+  var output: DescriptionControllerOutput!
+  var router: DescriptionRouter!
+  
+  @IBOutlet weak var dismissButton: UIButton!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    DescriptionConfigurator.configure(self)
+  }
+  
+  @IBAction func dismissButtonAction(sender: UIButton) {
+    router.navigateToMap()
+  }
 }
 
 extension DescriptionViewController: ToViewController {
