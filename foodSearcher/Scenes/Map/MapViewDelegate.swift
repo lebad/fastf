@@ -13,6 +13,17 @@ import MapKit
 extension MapViewController: GMSMapViewDelegate {
   
   func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+    
+    if let index = self.markers.indexOf(marker) {
+      if let pin = self.output.pins?[index] {
+        self.showBottomInformationViewForPin(pin)
+      }
+    }
+    
     return false
+  }
+  
+  func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+    self.hideBottomInformationView()
   }
 }

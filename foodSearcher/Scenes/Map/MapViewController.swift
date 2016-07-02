@@ -16,11 +16,11 @@ protocol MapViewControllerOutput {
   func stopUpdatingLocation()
   
   func fetchPins()
+  var pins: [Pin]? { get set }
 }
 
 protocol MapViewControllerInput {
-  func displayCurrentLocation(responce: Map.Response)
-  func displayPins(response: Map.Response)
+  
 }
 
 class MapViewController: UIViewController, MapViewControllerInput {
@@ -29,9 +29,15 @@ class MapViewController: UIViewController, MapViewControllerInput {
   var router: MapRouter!
   
   @IBOutlet weak var mapView: GMSMapView!
-  @IBOutlet weak var bottomInformationView: MapBottomInformationView!
+  @IBOutlet weak var bottomInformationView: MapBottomInformationView! {
+    didSet {
+      bottomInformationView.alpha = 0.0
+    }
+  }
   @IBOutlet weak var containerView: UIView!
   var tabBar: UITabBar! = UITabBar(frame: CGRectZero)
+  
+  var markers = [GMSMarker]()
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -67,15 +73,23 @@ class MapViewController: UIViewController, MapViewControllerInput {
       let position = CLLocationCoordinate2D(latitude: pin.latitude!, longitude: pin.longitude!)
       let marker = GMSMarker(position: position)
       marker.map = mapView
+      self.markers.append(marker)
     }
   }
   
-  func displayCurrentLocation(responce: Map.Response) {
+  func showBottomInformationViewForPin(pin: Pin) {
+    self.bottomInformationView.nameLabel.text = pin.name
+    self.bottomInformationView.addressLabel.text = pin.address
     
+    UIView.animateWithDuration(0.3) { 
+      self.bottomInformationView.alpha = 1.0
+    }
   }
   
-  func displayPins(response: Map.Response) {
-    
+  func hideBottomInformationView() {
+    UIView.animateWithDuration(0.3) {
+      self.bottomInformationView.alpha = 0.0
+    }
   }
   
   // MARK: - Actions

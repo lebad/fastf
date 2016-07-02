@@ -25,6 +25,8 @@ protocol MapInteractorInput {
 class MapInteractor: MapInteractorInput {
   weak var output: MapInteractorOutput!
   
+  var pins: [Pin]?
+  
   lazy var locationWorker: LocationWorker = {
     return LocationWorker(output: self.output)
   }()
@@ -47,6 +49,7 @@ class MapInteractor: MapInteractorInput {
   
   func fetchPins() {
      pinsWorker.fetchPins { (pins) in
+      self.pins = pins
       self.output.showPins(Map.Response(pins: pins))
     }
   }

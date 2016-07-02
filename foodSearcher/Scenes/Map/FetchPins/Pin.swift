@@ -11,4 +11,8 @@ import Foundation
 struct Pin {
   var latitude: Double?
   var longitude: Double?
+  
+  var name: String?
+  var address: String?
+  var logoImageURLString: String?
 }

@@ -25,8 +25,17 @@ class PinsMemStore: PinsStoreProtocol {
     let location1 = plusLocationFrom(500, currentLocation: currentLocation!)
     let location2 = minusLocationFrom(400, currentLocation: currentLocation!)
     
-    let pin1 = Pin(latitude: location1.latitude, longitude: location1.longitude)
-    let pin2 = Pin(latitude: location2.latitude, longitude: location2.longitude)
+    let pin1 = Pin(latitude: location1.latitude,
+                   longitude: location1.longitude,
+                   name: "Stardog's",
+                   address: "Krylatsky Hills, 30",
+                   logoImageURLString: "")
+    
+    let pin2 = Pin(latitude: location2.latitude,
+                   longitude: location2.longitude,
+                   name: "Best Hot Dogs",
+                   address: "Address",
+                   logoImageURLString: "")
     
     completionHandler(result: PinsStoreResult.Success(result: [pin1, pin2]))
   }
