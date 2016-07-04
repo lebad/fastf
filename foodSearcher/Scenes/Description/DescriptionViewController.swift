@@ -20,6 +20,7 @@ class DescriptionViewController: UIViewController, DescriptionControllerInput {
   var output: DescriptionControllerOutput!
   var router: DescriptionRouter!
   
+  @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var dismissButton: UIButton!
   
   override func awakeFromNib() {

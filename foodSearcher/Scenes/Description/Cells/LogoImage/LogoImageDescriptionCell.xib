@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" id="330-bH-G1U" customClass="LogoImageDescriptionCell" customModule="foodSearcher" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x98-dU-zDr">
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="cCj-es-gOc"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="x98-dU-zDr" secondAttribute="trailing" id="Qsa-Fz-06T"/>
+                <constraint firstItem="x98-dU-zDr" firstAttribute="leading" secondItem="330-bH-G1U" secondAttribute="leading" id="YRK-X1-28h"/>
+                <constraint firstAttribute="bottom" secondItem="x98-dU-zDr" secondAttribute="bottom" id="pEG-FJ-UY1"/>
+                <constraint firstItem="x98-dU-zDr" firstAttribute="top" secondItem="330-bH-G1U" secondAttribute="top" id="zFp-g9-6Qm"/>
+            </constraints>
+            <connections>
+                <outlet property="heightImageViewConstraint" destination="cCj-es-gOc" id="6as-b4-GzF"/>
+                <outlet property="imageView" destination="x98-dU-zDr" id="8wx-n2-ICl"/>
+            </connections>
+            <point key="canvasLocation" x="121.5" y="340"/>
+        </collectionViewCell>
+    </objects>
+</document>
