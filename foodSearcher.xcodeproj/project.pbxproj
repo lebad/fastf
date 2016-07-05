@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D49DCB41D2BED860024E79C /* DescriptionCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49DCB31D2BED860024E79C /* DescriptionCellFactory.swift */; };
+		3D49DCB61D2BEF240024E79C /* CellRegistarable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49DCB51D2BEF240024E79C /* CellRegistarable.swift */; };
 		550C6F461D1745BB004C101C /* PinsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C6F451D1745BB004C101C /* PinsWorker.swift */; };
 		550C6F491D174875004C101C /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C6F481D174875004C101C /* Pin.swift */; };
 		550C6F4B1D174A3C004C101C /* PinsMemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C6F4A1D174A3C004C101C /* PinsMemStore.swift */; };
@@ -55,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		2B69A540DC15559A31EFF6D5 /* Pods_foodSearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodSearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D49DCB31D2BED860024E79C /* DescriptionCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionCellFactory.swift; sourceTree = "<group>"; };
+		3D49DCB51D2BEF240024E79C /* CellRegistarable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellRegistarable.swift; sourceTree = "<group>"; };
 		550C6F451D1745BB004C101C /* PinsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinsWorker.swift; path = ../PinsWorker.swift; sourceTree = "<group>"; };
 		550C6F481D174875004C101C /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		550C6F4A1D174A3C004C101C /* PinsMemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinsMemStore.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 		55598FCD1D29872300DCA937 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3D49DCB51D2BEF240024E79C /* CellRegistarable.swift */,
+				3D49DCB31D2BED860024E79C /* DescriptionCellFactory.swift */,
 				55598FCE1D2987DA00DCA937 /* BaseDescriptionCell.swift */,
 				55598FD81D2AD5D600DCA937 /* DescriptionCellHandlerable.swift */,
 				55598FE81D2ADECB00DCA937 /* TextCell */,
@@ -510,11 +516,13 @@
 				552C5E1C1D16F27F0015D79D /* LocationWorker.swift in Sources */,
 				550C6F491D174875004C101C /* Pin.swift in Sources */,
 				55598FD91D2AD5D600DCA937 /* DescriptionCellHandlerable.swift in Sources */,
+				3D49DCB61D2BEF240024E79C /* CellRegistarable.swift in Sources */,
 				55598FE01D2ADA0100DCA937 /* MainImageDescriptionCellHandler.swift in Sources */,
 				55E583511D16D61100CDF685 /* MapModels.swift in Sources */,
 				55598FDE1D2ADA0100DCA937 /* MainImageDescriptionCell.swift in Sources */,
 				552C5E1A1D16EE8B0015D79D /* MapRouter.swift in Sources */,
 				550C6F6B1D202642004C101C /* MapViewDelegate.swift in Sources */,
+				3D49DCB41D2BED860024E79C /* DescriptionCellFactory.swift in Sources */,
 				550C6F4B1D174A3C004C101C /* PinsMemStore.swift in Sources */,
 				55598FCF1D2987DA00DCA937 /* BaseDescriptionCell.swift in Sources */,
 				55E5834D1D16D52C00CDF685 /* MapInteractor.swift in Sources */,

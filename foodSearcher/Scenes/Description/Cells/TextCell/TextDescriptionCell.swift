@@ -8,11 +8,11 @@
 
 import UIKit
 
-class TextDescriptionCell: UICollectionViewCell {
+class TextDescriptionCell: BaseDescriptionCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+  override func awakeFromNib() {
+      super.awakeFromNib()
+      // Initialization code
+  }
 
 }

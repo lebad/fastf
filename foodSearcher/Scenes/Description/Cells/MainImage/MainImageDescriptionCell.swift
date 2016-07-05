@@ -10,6 +10,12 @@ import UIKit
 
 class MainImageDescriptionCell: BaseDescriptionCell {
   
+  override var identifier: String {
+    get {
+      return "MainImageDescriptionCell"
+    }
+  }
+  
   @IBOutlet weak var imageView: UIImageView! {
     didSet {
       imageView.contentMode = .ScaleAspectFit

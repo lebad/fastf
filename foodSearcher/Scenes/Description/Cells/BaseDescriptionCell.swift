@@ -56,6 +56,4 @@ class BaseDescriptionCell: UICollectionViewCell {
     let cellSize = self.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
     return cellSize
   }
-  
-  
 }

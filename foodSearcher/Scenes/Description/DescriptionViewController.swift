@@ -20,7 +20,16 @@ class DescriptionViewController: UIViewController, DescriptionControllerInput {
   var output: DescriptionControllerOutput!
   var router: DescriptionRouter!
   
-  @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var collectionView: UICollectionView! {
+    didSet {
+      let flowLayout = UICollectionViewFlowLayout()
+      flowLayout.minimumLineSpacing = 0.0
+      collectionView.collectionViewLayout = flowLayout
+      collectionView.delegate = self
+      collectionView.dataSource = self
+      collectionView.registerCellNames(DescriptionCellFactory.allCellNames)
+    }
+  }
   @IBOutlet weak var dismissButton: UIButton!
   
   override func awakeFromNib() {
@@ -46,5 +55,30 @@ extension DescriptionViewController: ToViewController {
   
   func dismissViewController() {
     self.dismissViewControllerAnimated(true, completion: nil)
+  }
+}
+
+extension DescriptionViewController: UICollectionViewDelegate {
+  
+  
+}
+
+
+extension DescriptionViewController: UICollectionViewDataSource {
+  
+  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+  }
+
+  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    
+  }
+}
+
+extension DescriptionViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                             sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    
   }
 }
