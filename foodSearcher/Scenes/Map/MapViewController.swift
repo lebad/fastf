@@ -38,6 +38,7 @@ class MapViewController: UIViewController, MapViewControllerInput {
   var tabBar: UITabBar! = UITabBar(frame: CGRectZero)
   
   var markers = [GMSMarker]()
+  var selectedIndex: Int?
   
   override func awakeFromNib() {
     super.awakeFromNib()

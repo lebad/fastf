@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DescriptionControllerOutput {
-  
+  var pin: Pin? { get set }
 }
 
 protocol DescriptionControllerInput {

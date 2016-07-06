@@ -15,6 +15,7 @@ extension MapViewController: GMSMapViewDelegate {
   func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
     
     if let index = self.markers.indexOf(marker) {
+      self.selectedIndex = index
       if let pin = self.output.pins?[index] {
         self.showBottomInformationViewForPin(pin)
       }

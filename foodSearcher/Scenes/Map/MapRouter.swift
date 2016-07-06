@@ -31,6 +31,13 @@ class MapRouter {
   
   func navigateToDescription() {
     self.animator?.interactiveType = .None
+    passDataToDescriptionVC()
     viewController.presentViewController(descriptionVC, animated: true, completion: nil)
+  }
+  
+  private func passDataToDescriptionVC() {
+    guard let selectedIndex = self.viewController.selectedIndex else { return }
+    let currentPin = self.viewController.output.pins?[selectedIndex]
+    self.descriptionVC.output.pin = currentPin
   }
 }

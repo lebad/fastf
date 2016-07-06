@@ -15,4 +15,5 @@ struct Pin {
   var name: String?
   var address: String?
   var logoImageURLString: String?
+  var id: String?
 }
