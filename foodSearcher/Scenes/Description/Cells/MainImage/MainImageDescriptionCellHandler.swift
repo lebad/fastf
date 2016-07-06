@@ -12,7 +12,11 @@ class MainImageDescriptionCellHandler {
   
   private weak var cell: MainImageDescriptionCell?
   private var cellWidth: CGFloat?
+  private var descriptionModel: DescriptionModelMainImage
   
+  required init(descriptionModel: DescriptionModel) {
+    self.descriptionModel = descriptionModel as! DescriptionModelMainImage
+  }
   
 }
 

@@ -8,6 +8,18 @@
 
 import Foundation
 
-struct DescriptionObject {
+protocol DescriptionModel {
   
+}
+
+struct DescriptionModelMainImage: DescriptionModel {
+  var mainImageURLString: String?
+}
+
+struct DescriptionModelLogoImage: DescriptionModel {
+  var logoImageURLString: String?
+}
+
+struct DescriptionModelText: DescriptionModel {
+  var textString: String?
 }

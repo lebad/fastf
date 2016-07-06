@@ -9,7 +9,7 @@
 import Foundation
 
 protocol DescriptionInteractorOutput: class {
-  
+  func showDescriptionModels(response: Description.Response)
 }
 
 protocol DescriptionInteractorInput {
@@ -18,5 +18,11 @@ protocol DescriptionInteractorInput {
 
 class DescriptionInteractor: DescriptionInteractorInput {
   weak var output: DescriptionInteractorOutput!
+  var pin: Pin?
   
+  var descriptionModels: [DescriptionModel]?
+  
+  func fetchDescriptionObject() {
+    
+  }
 }

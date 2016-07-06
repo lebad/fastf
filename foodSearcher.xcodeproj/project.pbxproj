@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3D49DCB41D2BED860024E79C /* DescriptionCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49DCB31D2BED860024E79C /* DescriptionCellFactory.swift */; };
 		3D49DCB61D2BEF240024E79C /* CellRegistarable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49DCB51D2BEF240024E79C /* CellRegistarable.swift */; };
+		3D49DCBA1D2D26740024E79C /* LogoImageDescriptionCellHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49DCB91D2D26740024E79C /* LogoImageDescriptionCellHandler.swift */; };
+		3D49DCBC1D2D268F0024E79C /* TextDescriptionCellHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49DCBB1D2D268F0024E79C /* TextDescriptionCellHandler.swift */; };
+		3D49DCBE1D2D37ED0024E79C /* DescriptionViewControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49DCBD1D2D37ED0024E79C /* DescriptionViewControllerDelegates.swift */; };
 		550C6F461D1745BB004C101C /* PinsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C6F451D1745BB004C101C /* PinsWorker.swift */; };
 		550C6F491D174875004C101C /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C6F481D174875004C101C /* Pin.swift */; };
 		550C6F4B1D174A3C004C101C /* PinsMemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C6F4A1D174A3C004C101C /* PinsMemStore.swift */; };
@@ -63,6 +66,9 @@
 		2B69A540DC15559A31EFF6D5 /* Pods_foodSearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodSearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D49DCB31D2BED860024E79C /* DescriptionCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionCellFactory.swift; sourceTree = "<group>"; };
 		3D49DCB51D2BEF240024E79C /* CellRegistarable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellRegistarable.swift; sourceTree = "<group>"; };
+		3D49DCB91D2D26740024E79C /* LogoImageDescriptionCellHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoImageDescriptionCellHandler.swift; sourceTree = "<group>"; };
+		3D49DCBB1D2D268F0024E79C /* TextDescriptionCellHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDescriptionCellHandler.swift; sourceTree = "<group>"; };
+		3D49DCBD1D2D37ED0024E79C /* DescriptionViewControllerDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewControllerDelegates.swift; sourceTree = "<group>"; };
 		550C6F451D1745BB004C101C /* PinsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinsWorker.swift; path = ../PinsWorker.swift; sourceTree = "<group>"; };
 		550C6F481D174875004C101C /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		550C6F4A1D174A3C004C101C /* PinsMemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinsMemStore.swift; sourceTree = "<group>"; };
@@ -223,6 +229,7 @@
 			children = (
 				55598FE41D2ADB0700DCA937 /* LogoImageDescriptionCell.swift */,
 				55598FE61D2ADB2100DCA937 /* LogoImageDescriptionCell.xib */,
+				3D49DCB91D2D26740024E79C /* LogoImageDescriptionCellHandler.swift */,
 			);
 			name = LogoImage;
 			path = foodSearcher/Scenes/Description/Cells/LogoImage;
@@ -233,6 +240,7 @@
 			children = (
 				55598FE91D2ADEFB00DCA937 /* TextDescriptionCell.swift */,
 				55598FEA1D2ADEFB00DCA937 /* TextDescriptionCell.xib */,
+				3D49DCBB1D2D268F0024E79C /* TextDescriptionCellHandler.swift */,
 			);
 			path = TextCell;
 			sourceTree = "<group>";
@@ -268,10 +276,11 @@
 			isa = PBXGroup;
 			children = (
 				55598FCD1D29872300DCA937 /* Cells */,
+				558A6A531D28547900E32200 /* DescriptionConfigurator.swift */,
 				55C983FC1D23F6C500D0FE7E /* DescriptionViewController.swift */,
+				3D49DCBD1D2D37ED0024E79C /* DescriptionViewControllerDelegates.swift */,
 				558A6A4F1D2851BB00E32200 /* DescriptionRouter.swift */,
 				558A6A511D28530E00E32200 /* DescriptionInteractor.swift */,
-				558A6A531D28547900E32200 /* DescriptionConfigurator.swift */,
 				55598FED1D2C251200DCA937 /* DescriptionModels.swift */,
 				55598FEF1D2C2A3700DCA937 /* FetchDescriptionObject */,
 			);
@@ -532,6 +541,7 @@
 				55C983F91D23F61700D0FE7E /* FromMapToDescriptionAnimator.swift in Sources */,
 				55C983FD1D23F6C500D0FE7E /* DescriptionViewController.swift in Sources */,
 				55598FEB1D2ADEFB00DCA937 /* TextDescriptionCell.swift in Sources */,
+				3D49DCBC1D2D268F0024E79C /* TextDescriptionCellHandler.swift in Sources */,
 				55E5834F1D16D54F00CDF685 /* MapConfigurator.swift in Sources */,
 				5552956E1D11F666003C0C0F /* AppDelegate.swift in Sources */,
 				552C5E1C1D16F27F0015D79D /* LocationWorker.swift in Sources */,
@@ -541,7 +551,9 @@
 				55598FE01D2ADA0100DCA937 /* MainImageDescriptionCellHandler.swift in Sources */,
 				55E583511D16D61100CDF685 /* MapModels.swift in Sources */,
 				55598FDE1D2ADA0100DCA937 /* MainImageDescriptionCell.swift in Sources */,
+				3D49DCBE1D2D37ED0024E79C /* DescriptionViewControllerDelegates.swift in Sources */,
 				55598FF11D2C2A7100DCA937 /* DescriptionObject.swift in Sources */,
+				3D49DCBA1D2D26740024E79C /* LogoImageDescriptionCellHandler.swift in Sources */,
 				552C5E1A1D16EE8B0015D79D /* MapRouter.swift in Sources */,
 				550C6F6B1D202642004C101C /* MapViewDelegate.swift in Sources */,
 				3D49DCB41D2BED860024E79C /* DescriptionCellFactory.swift in Sources */,

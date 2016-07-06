@@ -29,13 +29,15 @@ class PinsMemStore: PinsStoreProtocol {
                    longitude: location1.longitude,
                    name: "Stardog's",
                    address: "Krylatsky Hills, 30",
-                   logoImageURLString: "")
+                   logoImageURLString: "",
+                   id: "1")
     
     let pin2 = Pin(latitude: location2.latitude,
                    longitude: location2.longitude,
                    name: "Best Hot Dogs",
                    address: "Address",
-                   logoImageURLString: "")
+                   logoImageURLString: "",
+                   id: "2")
     
     completionHandler(result: PinsStoreResult.Success(result: [pin1, pin2]))
   }

@@ -13,6 +13,6 @@ struct Description {
     var pin: Pin
   }
   struct Response {
-    
+    var descriptionObjects: [DescriptionModel]
   }
 }

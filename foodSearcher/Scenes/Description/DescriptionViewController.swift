@@ -10,6 +10,8 @@ import UIKit
 
 protocol DescriptionControllerOutput {
   var pin: Pin? { get set }
+  var descriptionModels: [DescriptionModel]? { get }
+  func fetchDescriptionObject()
 }
 
 protocol DescriptionControllerInput {
@@ -20,6 +22,12 @@ class DescriptionViewController: UIViewController, DescriptionControllerInput {
   var output: DescriptionControllerOutput!
   var router: DescriptionRouter!
   
+  lazy var descriptionCellFactory: DescriptionCellFactory = {
+    let descFactory = DescriptionCellFactory()
+    descFactory.setScreenWidth(CGRectGetWidth(self.collectionView.bounds))
+    return descFactory
+  }()
+  
   @IBOutlet weak var collectionView: UICollectionView! {
     didSet {
       let flowLayout = UICollectionViewFlowLayout()
@@ -27,7 +35,7 @@ class DescriptionViewController: UIViewController, DescriptionControllerInput {
       collectionView.collectionViewLayout = flowLayout
       collectionView.delegate = self
       collectionView.dataSource = self
-      collectionView.registerCellNames(DescriptionCellFactory.allCellNames)
+      collectionView.registerCellNames(self.descriptionCellFactory.allCellNames)
     }
   }
   @IBOutlet weak var dismissButton: UIButton!
@@ -38,7 +46,11 @@ class DescriptionViewController: UIViewController, DescriptionControllerInput {
   }
   
   @IBAction func dismissButtonAction(sender: UIButton) {
-    router.navigateToMap()
+    self.router.navigateToMap()
+  }
+  
+  func showDescriptionModels(response: Description.Response) {
+    self.collectionView.reloadData()
   }
 }
 
@@ -58,27 +70,4 @@ extension DescriptionViewController: ToViewController {
   }
 }
 
-extension DescriptionViewController: UICollectionViewDelegate {
-  
-  
-}
 
-
-extension DescriptionViewController: UICollectionViewDataSource {
-  
-  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    
-  }
-
-  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    
-  }
-}
-
-extension DescriptionViewController: UICollectionViewDelegateFlowLayout {
-  func collectionView(collectionView: UICollectionView,
-                      layout collectionViewLayout: UICollectionViewLayout,
-                             sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-    
-  }
-}

@@ -12,4 +12,5 @@ protocol DescriptionCellHandlerable {
   func setCell(cell: UICollectionViewCell)
   func setCellWidth(width: CGFloat)
   func updateCell()
+  init(descriptionModel: DescriptionModel)
 }
