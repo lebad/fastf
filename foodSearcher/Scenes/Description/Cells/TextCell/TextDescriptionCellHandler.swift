@@ -10,22 +10,27 @@ import UIKit
 
 class TextDescriptionCellHandler {
   
+  private weak var cell: TextDescriptionCell?
+  private var cellWidth: CGFloat?
+  private var descriptionModel: DescriptionModelText
+  
   required init(descriptionModel: DescriptionModel) {
-    
+    self.descriptionModel = descriptionModel as! DescriptionModelText
   }
 }
 
 extension TextDescriptionCellHandler: DescriptionCellHandlerable {
   
   func setCell(cell: UICollectionViewCell) {
-    
+    guard let curCell = cell as? TextDescriptionCell else { return }
+    self.cell = curCell
   }
   
   func setCellWidth(width: CGFloat) {
-    
+    self.cellWidth = width
   }
   
   func updateCell() {
-    
+    self.cell?.textView.text = descriptionModel.textString
   }
 }

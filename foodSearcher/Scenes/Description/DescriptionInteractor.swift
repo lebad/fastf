@@ -19,10 +19,14 @@ protocol DescriptionInteractorInput {
 class DescriptionInteractor: DescriptionInteractorInput {
   weak var output: DescriptionInteractorOutput!
   var pin: Pin?
+  private(set) var descriptionModels: [DescriptionModel]?
+  private var descriptionWorker = DescriptionWorker(descriptionWorker: DescriptionMemStore())
   
-  var descriptionModels: [DescriptionModel]?
-  
-  func fetchDescriptionObject() {
-    
+  func fetchDescriptionObjects() {
+    guard let id = pin?.id else { return }
+    descriptionWorker.fetchDescriptionModelsForID(id) { (models) in
+      self.output.showDescriptionModels(Description.Response(descriptionObjects: models))
+    }
   }
+  
 }

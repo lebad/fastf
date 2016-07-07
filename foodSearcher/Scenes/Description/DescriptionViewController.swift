@@ -9,9 +9,9 @@
 import UIKit
 
 protocol DescriptionControllerOutput {
+  func fetchDescriptionObjects()
   var pin: Pin? { get set }
   var descriptionModels: [DescriptionModel]? { get }
-  func fetchDescriptionObject()
 }
 
 protocol DescriptionControllerInput {
@@ -43,6 +43,11 @@ class DescriptionViewController: UIViewController, DescriptionControllerInput {
   override func awakeFromNib() {
     super.awakeFromNib()
     DescriptionConfigurator.configure(self)
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.output.fetchDescriptionObjects()
   }
   
   @IBAction func dismissButtonAction(sender: UIButton) {

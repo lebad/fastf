@@ -28,6 +28,9 @@
                 <constraint firstItem="QLN-Qm-Ywq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Pud-KN-oId"/>
                 <constraint firstItem="QLN-Qm-Ywq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dWT-S1-YoU"/>
             </constraints>
+            <connections>
+                <outlet property="textView" destination="QLN-Qm-Ywq" id="3ki-km-LGz"/>
+            </connections>
             <point key="canvasLocation" x="227.5" y="337"/>
         </collectionViewCell>
     </objects>

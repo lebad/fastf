@@ -9,6 +9,8 @@
 import UIKit
 
 class TextDescriptionCell: BaseDescriptionCell {
+  
+  @IBOutlet weak var textView: UITextView!
 
   override func awakeFromNib() {
       super.awakeFromNib()
