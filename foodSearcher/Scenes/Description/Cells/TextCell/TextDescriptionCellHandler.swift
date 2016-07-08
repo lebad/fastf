@@ -11,7 +11,7 @@ import UIKit
 class TextDescriptionCellHandler {
   
   private weak var cell: TextDescriptionCell?
-  private var cellWidth: CGFloat?
+  var cellWidth: CGFloat?
   private var descriptionModel: DescriptionModelText
   
   required init(descriptionModel: DescriptionModel) {
@@ -24,10 +24,7 @@ extension TextDescriptionCellHandler: DescriptionCellHandlerable {
   func setCell(cell: UICollectionViewCell) {
     guard let curCell = cell as? TextDescriptionCell else { return }
     self.cell = curCell
-  }
-  
-  func setCellWidth(width: CGFloat) {
-    self.cellWidth = width
+    self.cell?.handler = self
   }
   
   func updateCell() {

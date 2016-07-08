@@ -10,7 +10,9 @@ import UIKit
 
 class BaseDescriptionCell: UICollectionViewCell {
   
-  var width: CGFloat?
+  weak var handler: DescriptionCellHandlerable?
+  
+//  var width: CGFloat?
   
   private var customConstraints: [NSLayoutConstraint] = {
     return [NSLayoutConstraint]()
@@ -37,7 +39,7 @@ class BaseDescriptionCell: UICollectionViewCell {
     
     let view = self.contentView
     
-    if let width = self.width {
+    if let width = self.handler?.cellWidth {
       let constraints = NSLayoutConstraint.constraintsWithVisualFormat("H:[contentView(==width)]",
                                                                        options: NSLayoutFormatOptions(rawValue: 0),
                                                                        metrics: ["width": width],

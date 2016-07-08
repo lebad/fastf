@@ -46,9 +46,8 @@ class DescriptionCellFactory {
       let classString = String(descriptionModel.dynamicType)
       let handlerClass = handlerMatches[classString]
       let handler = handlerClass!.init(descriptionModel: descriptionModel)
-      if let width = self.cellWidth {
-        handler.setCellWidth(width)
-      }
+      handler.cellWidth = self.cellWidth
+
       self.cellHandlersDict[indexPath] = handler
       return handler
     }
@@ -61,9 +60,8 @@ class DescriptionCellFactory {
       let classString = String(descriptionModel.dynamicType)
       let handlerClass = handlerMatches[classString]
       let handler = handlerClass!.init(descriptionModel: descriptionModel)
-      if let width = self.cellWidth {
-        handler.setCellWidth(width)
-      }
+      handler.cellWidth = self.cellWidth
+
       self.fakeCellHandlerDict[indexPath] = handler
       return handler
     }

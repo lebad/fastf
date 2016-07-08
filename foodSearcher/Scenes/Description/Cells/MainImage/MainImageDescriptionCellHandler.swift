@@ -11,7 +11,7 @@ import UIKit
 class MainImageDescriptionCellHandler {
   
   private weak var cell: MainImageDescriptionCell?
-  private var cellWidth: CGFloat?
+  var cellWidth: CGFloat?
   private var descriptionModel: DescriptionModelMainImage
   
   required init(descriptionModel: DescriptionModel) {
@@ -25,13 +25,20 @@ extension MainImageDescriptionCellHandler: DescriptionCellHandlerable {
   func setCell(cell: UICollectionViewCell) {
     guard let curCell = cell as? MainImageDescriptionCell else { return }
     self.cell = curCell
-  }
-  
-  func setCellWidth(width: CGFloat) {
-    self.cellWidth = width
+    self.cell?.handler = self
   }
   
   func updateCell() {
+    guard let image = self.cell?.imageView?.image else { return }
+    addAspectRatioConstraintForImage(image)
+  }
+  
+  private func addAspectRatioConstraintForImage(image: UIImage) {
+    guard let cell = self.cell else { return }
+    let aspectRatio = image.size.width / image.size.height
+    let width = CGRectGetWidth(cell.bounds)
+    let height = width / aspectRatio
     
+    cell.heightImageViewConstraint.constant = height
   }
 }

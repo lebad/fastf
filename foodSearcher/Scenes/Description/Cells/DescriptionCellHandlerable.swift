@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol DescriptionCellHandlerable {
+protocol DescriptionCellHandlerable: class {
   func setCell(cell: UICollectionViewCell)
-  func setCellWidth(width: CGFloat)
+  var cellWidth: CGFloat? { get set }
   func updateCell()
   init(descriptionModel: DescriptionModel)
 }

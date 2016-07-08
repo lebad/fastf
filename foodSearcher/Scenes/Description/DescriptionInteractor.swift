@@ -25,6 +25,7 @@ class DescriptionInteractor: DescriptionInteractorInput {
   func fetchDescriptionObjects() {
     guard let id = pin?.id else { return }
     descriptionWorker.fetchDescriptionModelsForID(id) { (models) in
+      self.descriptionModels = models
       self.output.showDescriptionModels(Description.Response(descriptionObjects: models))
     }
   }
