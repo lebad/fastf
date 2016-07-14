@@ -128,7 +128,8 @@ class FromMapToDescriptionAnimator: UIPercentDrivenInteractiveTransition {
       
       self.direction = .Top
       
-      self.toVC.view.frame.origin.y = self.fromVC.getTargetView().frame.origin.y + self.fromVC.getTargetView().frame.size.height
+      let toVCOriginY1 = self.fromVC.getTargetView().frame.origin.y + self.fromVC.getTargetView().frame.size.height
+      self.toVC.view.frame.origin.y = toVCOriginY1
       self.fromVC.view.insertSubview(self.toVC.view, belowSubview: self.fromVC.tabBar)
       
       self.fromVC.view.layoutIfNeeded()
@@ -145,7 +146,8 @@ class FromMapToDescriptionAnimator: UIPercentDrivenInteractiveTransition {
       
       self.presentationCancelAnimationHandler = { containerView in
         self.fromVC.getTargetView().frame.origin.y = startOriginY
-        self.toVC.view.frame.origin.y = self.fromVC.getTargetView().frame.origin.y + self.fromVC.getTargetView().frame.size.height
+        let toVCOriginY2 = self.fromVC.getTargetView().frame.origin.y + self.fromVC.getTargetView().frame.size.height
+        self.toVC.view.frame.origin.y = toVCOriginY2
         self.fromVC.tabBar.frame.origin.y = tabStartOriginY
         self.fromVC.containerView.alpha = 1.0
         self.fromVC.tabBar.alpha = 1.0
@@ -157,11 +159,13 @@ class FromMapToDescriptionAnimator: UIPercentDrivenInteractiveTransition {
       
       self.presentationAnimationHandler = { [unowned self] containerView, percentComplete in
         let _percentComplete = percentComplete >= 0 ? percentComplete : 0
-        self.fromVC.getTargetView().frame.origin.y = startOriginY - (diff * _percentComplete)
+        let originY = startOriginY - (diff * _percentComplete)
+        self.fromVC.getTargetView().frame.origin.y = originY
         if self.fromVC.getTargetView().frame.origin.y < endOriginY {
           self.fromVC.getTargetView().frame.origin.y = endOriginY
         }
-        self.toVC.view.frame.origin.y = self.fromVC.getTargetView().frame.origin.y + self.fromVC.getTargetView().frame.size.height
+        let toVCOriginY3 = self.fromVC.getTargetView().frame.origin.y + self.fromVC.getTargetView().frame.size.height
+        self.toVC.view.frame.origin.y = toVCOriginY3
         self.fromVC.tabBar.frame.origin.y = tabStartOriginY + (tabDiff * _percentComplete)
         if self.fromVC.tabBar.frame.origin.y > tabEndOriginY {
           self.fromVC.tabBar.frame.origin.y = tabEndOriginY
@@ -198,6 +202,7 @@ class FromMapToDescriptionAnimator: UIPercentDrivenInteractiveTransition {
       print("start dismissal")
       self.fromVC.beginAppearanceTransition()
       
+      self.fromVC.view.addSubview(self.toVC.view)
       self.fromVC.view.insertSubview(self.toVC.view, belowSubview: self.fromVC.tabBar)
       
       self.fromVC.view.layoutIfNeeded()
@@ -228,7 +233,7 @@ class FromMapToDescriptionAnimator: UIPercentDrivenInteractiveTransition {
       }
       
       self.dismissalAnimationHandler = { containerView, percentComplete in
-        let _percentComplete = percentComplete >= -0.05 ? percentComplete : -0.05
+        let _percentComplete = percentComplete >= -0.5 ? percentComplete : -0.5
         self.fromVC.getTargetView().frame.origin.y = startOriginY + (diff * _percentComplete)
         self.toVC.view.frame.origin.y = self.fromVC.getTargetView().frame.origin.y + self.fromVC.getTargetView().frame.size.height
         self.fromVC.tabBar.frame.origin.y = tabStartOriginY - (tabDiff *  _percentComplete)

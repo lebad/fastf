@@ -29,8 +29,16 @@ class MapRouter {
     self.animator?.animate()
   }
   
+  func navigateToDescriptionWithInteraction() {
+    navigate()
+  }
+  
   func navigateToDescription() {
     self.animator?.interactiveType = .None
+    navigate()
+  }
+  
+  private func navigate() {
     passDataToDescriptionVC()
     viewController.presentViewController(descriptionVC, animated: true, completion: nil)
   }

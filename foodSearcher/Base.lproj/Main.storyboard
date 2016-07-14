@@ -116,17 +116,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NGs-k6-Lgf" secondAttribute="bottom" id="2IO-Ig-1iC"/>
-                            <constraint firstAttribute="trailing" secondItem="XNX-J7-87W" secondAttribute="trailing" id="BSt-53-UzQ"/>
-                            <constraint firstItem="XqA-aD-Lmj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FDn-1u-pAj"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XNX-J7-87W" secondAttribute="bottom" id="JTW-zV-m2a"/>
+                            <constraint firstAttribute="bottom" secondItem="XqA-aD-Lmj" secondAttribute="bottom" id="24w-fe-Bbk"/>
+                            <constraint firstItem="XqA-aD-Lmj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Dr3-dy-CAb"/>
+                            <constraint firstItem="XNX-J7-87W" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EjN-pe-Arl"/>
+                            <constraint firstAttribute="bottom" secondItem="NGs-k6-Lgf" secondAttribute="bottom" id="IXX-yt-yzv"/>
                             <constraint firstAttribute="trailing" secondItem="NGs-k6-Lgf" secondAttribute="trailing" id="RCt-eP-HW7"/>
-                            <constraint firstAttribute="trailing" secondItem="XqA-aD-Lmj" secondAttribute="trailing" id="Zy7-b9-A9K"/>
-                            <constraint firstItem="XqA-aD-Lmj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="a3t-Bh-pa3"/>
-                            <constraint firstAttribute="bottom" secondItem="XqA-aD-Lmj" secondAttribute="bottom" id="biX-8Q-PCn"/>
-                            <constraint firstItem="XNX-J7-87W" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mea-hu-q5i"/>
+                            <constraint firstAttribute="bottom" secondItem="XNX-J7-87W" secondAttribute="bottom" id="WZE-qu-qEv"/>
+                            <constraint firstAttribute="trailing" secondItem="XqA-aD-Lmj" secondAttribute="trailing" id="b57-GI-Ei9"/>
+                            <constraint firstAttribute="trailing" secondItem="XNX-J7-87W" secondAttribute="trailing" id="qLq-L9-dtM"/>
+                            <constraint firstItem="XqA-aD-Lmj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rbv-yw-P8f"/>
                             <constraint firstItem="NGs-k6-Lgf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tgs-yF-Qm8"/>
-                            <constraint firstItem="XNX-J7-87W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vyA-qv-x1J"/>
+                            <constraint firstItem="XNX-J7-87W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="udz-8o-Bcq"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -175,17 +175,14 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="v0N-pR-8ia" firstAttribute="leading" secondItem="1cw-5Y-ezK" secondAttribute="leading" constant="20" id="F7w-DI-KsY"/>
-                            <constraint firstAttribute="trailing" secondItem="JfY-qP-sj1" secondAttribute="trailing" id="PcC-D9-s1r"/>
-                            <constraint firstItem="JfY-qP-sj1" firstAttribute="top" secondItem="Xne-On-YgM" secondAttribute="bottom" id="Qza-bM-wIs"/>
-                            <constraint firstItem="v0N-pR-8ia" firstAttribute="top" secondItem="Xne-On-YgM" secondAttribute="bottom" constant="20" id="ej5-1p-lpv"/>
-                            <constraint firstItem="fsd-cS-LM5" firstAttribute="top" secondItem="JfY-qP-sj1" secondAttribute="bottom" id="rBD-v1-Ebp"/>
-                            <constraint firstItem="JfY-qP-sj1" firstAttribute="leading" secondItem="1cw-5Y-ezK" secondAttribute="leading" id="yF8-yj-Hg4"/>
+                            <constraint firstAttribute="trailing" secondItem="JfY-qP-sj1" secondAttribute="trailing" id="J0d-Y1-qBP"/>
+                            <constraint firstAttribute="bottom" secondItem="JfY-qP-sj1" secondAttribute="bottom" id="XsV-rT-2u4"/>
+                            <constraint firstItem="JfY-qP-sj1" firstAttribute="leading" secondItem="1cw-5Y-ezK" secondAttribute="leading" id="aqB-IS-tjk"/>
+                            <constraint firstItem="v0N-pR-8ia" firstAttribute="top" secondItem="1cw-5Y-ezK" secondAttribute="top" constant="20" id="dIA-N3-gZ3"/>
+                            <constraint firstItem="JfY-qP-sj1" firstAttribute="top" secondItem="1cw-5Y-ezK" secondAttribute="top" id="obA-8N-tLo"/>
+                            <constraint firstItem="v0N-pR-8ia" firstAttribute="leading" secondItem="1cw-5Y-ezK" secondAttribute="leading" constant="20" id="yaC-8r-PbX"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="collectionView" destination="JfY-qP-sj1" id="mg0-WM-LtJ"/>

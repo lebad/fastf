@@ -112,7 +112,7 @@ extension MapViewController: FromViewController {
   }
   
   func presentViewController(viewController: UIViewController) {
-    self.presentViewController(viewController, animated: true, completion: nil)
+    self.router.navigateToDescriptionWithInteraction()
   }
   
   func beginAppearanceTransition() {
