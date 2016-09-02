@@ -25,6 +25,9 @@ extension TextDescriptionCellHandler: DescriptionCellHandlerable {
     guard let curCell = cell as? TextDescriptionCell else { return }
     self.cell = curCell
     self.cell?.handler = self
+    
+    
+    
   }
   
   func updateCell() {
